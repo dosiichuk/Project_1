@@ -12,15 +12,16 @@ public class HumanPlayer implements IPlayer{
     }
 
     @Override
-    public int getId() {
-        return id;
-    }
-    @Override
     public PlayerType getPlayerType() {
         return playerType;
     }
     @Override
     public PlayerSymbol getPlayerSymbol() {
         return playerSymbol;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 }

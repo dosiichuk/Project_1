@@ -86,6 +86,9 @@ public class View implements IView {
             String userInput = scanner.nextLine();
             try {
                 int boardSize = Integer.parseInt(userInput);
+                if (boardSize < 3) {
+                    throw new Exception("Board size cannot be less than 3!");
+                }
                 gameService.initializeBoard(boardSize);
                 boardSizeDetermined = true;
                 return true;
@@ -177,4 +180,15 @@ public class View implements IView {
         showTheCurrentBoard();
         return true;
     }
+
+    @Override
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    @Override
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+    
 }
